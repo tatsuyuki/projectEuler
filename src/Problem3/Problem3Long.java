@@ -25,23 +25,26 @@ public class Problem3Long {
         ArrayList<Integer> prime = new ArrayList<Integer>();
         ArrayList<Integer> primeFactor = new ArrayList<Integer>();
         
-        for (int i = 2; i < sN; i++) {
+        for (int i = 2; i < sN; i = i + 2) {
             int count = 0;
-            for (int j = 2; j < i; j++) {
+            for (int j = 2; j < i; j = j + 2) {
                 if(i % j == 0) {
                     count++;
                 }
             }
             if(count <= 1) {
                 prime.add(i);
+                if(pN % i == 0) {
+                    primeFactor.add(i);
+                }
             }
         }
         
-        for (Integer p : prime) {
-            if(pN % p == 0) {
-                primeFactor.add(p);
-            }
-        }
+        //for (Integer p : prime) {
+        //    if(pN % p == 0) {
+        //        primeFactor.add(p);
+        //    }
+        
         System.out.println("prime numbers: " + prime);
         System.out.println("prime factors: " + primeFactor);
         
