@@ -25,9 +25,12 @@ public class Problem3Long {
         ArrayList<Integer> prime = new ArrayList<Integer>();
         ArrayList<Integer> primeFactor = new ArrayList<Integer>();
         
-        for (int i = 2; i < sN; i = i + 2) {
+        if(sN >= 2) {
+            prime.add(2);
+        }
+        for (int i = 3; i < sN; i = i + 2) {
             int count = 0;
-            for (int j = 2; j < i; j = j + 2) {
+            for (int j = 3; j < i; j = j + 2) {
                 if(i % j == 0) {
                     count++;
                 }
