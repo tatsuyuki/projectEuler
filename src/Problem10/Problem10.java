@@ -19,26 +19,17 @@ public class Problem10 {
     public static void main(String[] args) {
         // TODO code application logic here
         int n = 2000000;
-        int sqrtN = (int) Math.sqrt(n);
-        int sum = 2;
-        ArrayList<Integer> primes = new ArrayList<Integer>();
-        primes.add(2);
-        
-        for(int i = 3; i <= sqrtN; i++) {
-            int count = 0;
-            for(int j = 3; j < i; j = j + 2){
-                if(i % j == 0) {
-                    count++;
+        boolean[] primes = new boolean[n + 1];
+        long sum = 0L;
+        for (int i = 2; i <= n; i++) {
+            if(!primes[i]) {
+                sum += i;
+                for (int k = 2 * i; k <= n; k += i) {
+                    primes[k] = true;
                 }
             }
-            if(count <= 1) {
-                primes.add(i);
-                sum = sum + i;
-            }
         }
-        System.out.println(primes);
-        System.out.println(sum);
-        
+        System.out.println(sum);        
         
     }
     

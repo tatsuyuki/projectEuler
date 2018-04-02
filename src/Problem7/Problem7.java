@@ -41,9 +41,9 @@ public class Problem7 {
         }
         
         System.out.println(prime.get(n-1));
-        //for (Integer l : prime) {
-        //    System.out.println(l);
-        //}
+    //    for (Integer l : prime) {
+    //        System.out.println(l);
+    //    }
         
     }
     
