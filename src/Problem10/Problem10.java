@@ -10,6 +10,12 @@ import java.util.ArrayList;
 /**
  *
  * @author mike
+ * 
+
+ * The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+ * Find the sum of all the primes below two million.
+
  */
 public class Problem10 {
 
@@ -23,6 +29,7 @@ public class Problem10 {
         long sum = 0L;
         for (int i = 2; i <= n; i++) {
             if(!primes[i]) {
+                System.out.println(!primes[i]);
                 sum += i;
                 for (int k = 2 * i; k <= n; k += i) {
                     primes[k] = true;
