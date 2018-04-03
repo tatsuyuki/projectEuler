@@ -29,7 +29,7 @@ public class Problem10 {
         long sum = 0L;
         for (int i = 2; i <= n; i++) {
             if(!primes[i]) {
-                System.out.println(!primes[i]);
+                
                 sum += i;
                 for (int k = 2 * i; k <= n; k += i) {
                     primes[k] = true;
